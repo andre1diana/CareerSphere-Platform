@@ -1,0 +1,1 @@
+ALTER TABLE application MODIFY COLUMN job_offer_id INT NULL; 

@@ -1,0 +1,20 @@
+/* Login.css */
+.login-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .login-card {
+    width: 100%;
+    max-width: 500px;
+    margin-top: 50px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .login-card h2 {
+    margin-bottom: 20px;
+  }
+  

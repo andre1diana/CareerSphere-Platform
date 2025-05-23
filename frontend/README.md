@@ -1,70 +1,112 @@
-# Getting Started with Create React App
+# Job Recruitment Platform – Web Technologies Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This web application is a job recruitment platform (inspired by LinkedIn), designed to help recent university graduates find their place in the job market in a smooth and enjoyable way. It enables direct interaction with employers and offers a user-friendly experience while tracking market trends and job opportunities.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🧩 Project Pages
 
-### `npm start`
+1. **Login Page** – user authentication.
+2. **Signup Page** – account creation.
+3. **Dashboard (Home)** – the main landing page featuring company highlights, personalized job suggestions, and user stats.
+4. **User Profile Page** – contains user information, education, experience, and notifications.
+5. **Admin Panel** – admin-only section for managing users and job postings.
+6. **Job Listings Page** – complete list of available jobs with filters.
+7. **Job Details Page** – detailed view of a selected job + apply button for eligible users.
+8. **Settings Page** – user account settings.
+9. **Contact Page** – available in the footer.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 👥 User Roles
 
-### `npm test`
+### Guest
+- Can view job listings.
+- Can view employer profiles.
+- Must sign up or log in to apply for jobs.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### User / Applicant (Employee)
+- Can view and apply for jobs.
+- Can view employer profiles.
+- Can edit their own profile and upload a resume.
 
-### `npm run build`
+### Employer
+- Can create job postings.
+- Can view all aplications for a job
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Admin
+- Manages and verifies employer posts.
+- Handles user-reported issues (e.g. false information, spam job offers).
+- Has access to platform statistics and administrative tools.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🔄 Usage Scenario
 
-### `npm run eject`
+- The user logs in from the **Login Page**.
+- After authentication, they are redirected to the **Home Dashboard**, where a welcome panel and user role badge are shown.
+- A gallery of **Most Popular Companies This Week** is displayed along with other job suggestions.
+- On the **Profile Page**, users can edit their information using pre-filled editable fields (initially empty for fast loading).
+- On the **Jobs Page**, users can use filters to refine job results. Filters apply after clicking the **Apply Filters** button.
+- Clicking **View Details** opens a new page with extended job information. Only applicants (employees) will see the **Apply Now** button.
+- A floating **Chat Button** is available on all pages, located at the bottom right.
+- The **Contact Page** can be accessed via the footer.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## ⚙️ Technologies Used
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Frontend
+- HTML
+- CSS (Bootstrap)
+- JavaScript
+- React
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## 📦 Dependencies
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Node.js
+- npm
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## 🚀 Project Setup
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/andre1diana/CareerSphere-frontend.git
+   cd CareerSphere-frontend/frontend
+   ```
 
-### Analyzing the Bundle Size
+2. Install frontend dependencies:
+   ```
+   npm install
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+3. Start the frontend development server:
+   ```
+   npm start
+   ```
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 📁 Code Structure
 
-### Advanced Configuration
+### public:
+Contains images for the Dashboard gallery and index.html (default created with npm). The tab image has been customized.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### src:
+Contains multiple folders:
 
-### Deployment
+1. **assets** – Contains all images used in the project (logo, default profile picture, etc.)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+2. **components** – Contains all components displayed on the page based on user role, including RoutesComponent where all application routes are defined
 
-### `npm run build` fails to minify
+3. **context** – Files that save the application context in local storage to maintain functionalities such as login state and component display
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+4. **pages** – All application pages
+
+5. **styles** – Contains styles used in pages
+
+6. **App.js** – The main component of the project containing contexts and routes to pages

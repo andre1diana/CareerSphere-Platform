@@ -2,6 +2,10 @@
 
 This web application is a job recruitment platform (inspired by LinkedIn), designed to help recent university graduates find their place in the job market in a smooth and enjoyable way. It enables direct interaction with employers and offers a user-friendly experience while tracking market trends and job opportunities.
 
+![Welcome Page]["C:\Users\Didi\Documents\Anul3_Diana\Sem 2\Tehno_web_P\CareerSphere\images\Screenshot 2025-07-10 104057.png"]
+![Profile Page]["C:\Users\Didi\Documents\Anul3_Diana\Sem 2\Tehno_web_P\CareerSphere\images\Screenshot 2025-07-10 104521.png"]
+![Jobs Page]["C:\Users\Didi\Documents\Anul3_Diana\Sem 2\Tehno_web_P\CareerSphere\images\Screenshot 2025-07-10 104447.png"]
+![Dashboard]["C:\Users\Didi\Documents\Anul3_Diana\Sem 2\Tehno_web_P\CareerSphere\images\Screenshot 2025-07-10 104429.png"]
 ---
 
 ## 🧩 Project Pages
@@ -75,8 +79,8 @@ This web application is a job recruitment platform (inspired by LinkedIn), desig
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/andre1diana/CareerSphere-frontend.git
-   cd CareerSphere-frontend/frontend
+   git clone https://github.com/andre1diana/CareerSphere-Platform.git
+   cd CareerSphere-Platform/frontend
    ```
 
 2. Install frontend dependencies:
@@ -88,10 +92,21 @@ This web application is a job recruitment platform (inspired by LinkedIn), desig
    ```
    npm start
    ```
+### Backend
 
+1. Move to directory:
+   ```bash
+   cd CareerSphere-Platform/backend
+   ```
+2. Start the backend:
+   ```
+   mvn spring-boot:run
+   ``` 
 ---
 
-## 📁 Code Structure
+# 📁 Code Structure
+
+## Frontend
 
 ### public:
 Contains images for the Dashboard gallery and index.html (default created with npm). The tab image has been customized.
@@ -110,3 +125,54 @@ Contains multiple folders:
 5. **styles** – Contains styles used in pages
 
 6. **App.js** – The main component of the project containing contexts and routes to pages
+
+## Backend
+
+1. **config**  
+Contains the configuration classes of the application:  
+- `SecurityConfig`, `WebConfig`, `CorsConfig`, etc.  
+- Settings for authentication, authorization (JWT), CORS, global mappings, etc.
+
+2. **controller**  
+Contains the `@RestController` classes:  
+- Handles HTTP routes (e.g., `GET /api/users`, `POST /api/login`)  
+- Connects the frontend with the application logic  
+- Calls methods from the `service` layer
+
+3. **database**  
+Contains database-specific logic:  
+- Data initialization files  
+- DB connection/management classes (possibly `Flyway`, `Liquibase`)
+
+4. **dto**  
+DTO = Data Transfer Object:  
+- Classes for transferring data between backend and frontend  
+- Used to avoid exposing JPA entities directly  
+- E.g., `UserDTO`, `JobDTO`, `LoginRequestDTO`
+
+5. **filter**  
+Contains filters applied to HTTP requests:  
+- E.g., JWT filters (token-based authentication)  
+- `OncePerRequestFilter`, `JwtAuthenticationFilter`
+
+6. **model**  
+Contains JPA entities:  
+- Maps database tables  
+- E.g., `User`, `Job`, `Application`  
+- Annotated with `@Entity`, `@Table`, etc.
+
+7. **service**  
+Contains the business logic of the application:  
+- `@Service` classes implementing actual functionality  
+- E.g., `UserService`, `AuthService`, `JobService`  
+- Calls repositories and returns data to the controller
+
+8. **util**  
+Contains utility classes:  
+- Helper functions: validations, conversions, hashing, etc.  
+- E.g., `PasswordEncoderUtil`, `JwtUtil`, `DateUtils`
+
+9. **BackendApplication.java**  
+- The main class that runs the Spring Boot application  
+- Annotated with `@SpringBootApplication`  
+- Contains the `main()` method

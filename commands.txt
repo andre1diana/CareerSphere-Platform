@@ -1,2 +1,0 @@
-set OPENSSL_CONF= && npm start
-mvn spring-boot:run

@@ -2,10 +2,15 @@
 
 This web application is a job recruitment platform (inspired by LinkedIn), designed to help recent university graduates find their place in the job market in a smooth and enjoyable way. It enables direct interaction with employers and offers a user-friendly experience while tracking market trends and job opportunities.
 
-![Welcome Page]["images\Screenshot 2025-07-10 104057.png"]
-![Profile Page]["images\Screenshot 2025-07-10 104521.png"]
-![Jobs Page]["images\Screenshot 2025-07-10 104447.png"]
-![Dashboard]["images\Screenshot 2025-07-10 104429.png"]
+<p align="center">
+  <img src="images/Screenshot 2025-07-10 104057.png" alt="Welcome Page" width="45%" style="margin: 10px;"/>
+  <img src="images/Screenshot 2025-07-10 104521.png" alt="Profile Page" width="45%" style="margin: 10px;"/>
+</p>
+
+<p align="center">
+  <img src="images/Screenshot 2025-07-10 104447.png" alt="Jobs Page" width="45%" style="margin: 10px;"/>
+  <img src="images/Screenshot 2025-07-10 104429.png" alt="Dashboard" width="45%" style="margin: 10px;"/>
+</p>
 ---
 
 ## 🧩 Project Pages
